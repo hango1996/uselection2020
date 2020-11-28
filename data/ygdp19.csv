@@ -1,0 +1,68 @@
+"SAGDP1 Gross Domestic Product (GDP) summary, annual by state"
+"Real Gross Domestic Product (GDP) (Millions of chained 2012 dollars)" 
+"Bureau of Economic Analysis" 
+"State or DC"
+"GeoFips","GeoName","2019"
+"00000","United States",19091662.0
+"01000","Alabama",200829.4
+"02000","Alaska",53255.2
+"04000","Arizona",323597.6
+"05000","Arkansas",117447.1
+"06000","California",2800505.4
+"08000","Colorado",356280.2
+"09000","Connecticut",251329.8
+"10000","Delaware",64319.3
+"11000","District of Columbia",123929.3
+"12000","Florida",963255.9
+"13000","Georgia",547422.7
+"15000","Hawaii",82471.4
+"16000","Idaho",74937.1
+"17000","Illinois",773135.5
+"18000","Indiana",337636.1
+"19000","Iowa",173515.4
+"20000","Kansas",160059.3
+"21000","Kentucky",190811.5
+"22000","Louisiana",239967.2
+"23000","Maine",58793.3
+"24000","Maryland",374039.3
+"25000","Massachusetts",519961.6
+"26000","Michigan",471648.1
+"27000","Minnesota",341041.4
+"28000","Mississippi",102656.4
+"29000","Missouri",287659.3
+"30000","Montana",47916.3
+"31000","Nebraska",117395.2
+"32000","Nevada",153728.6
+"33000","New Hampshire",77240.3
+"34000","New Jersey",556731.0
+"35000","New Mexico",98765.7
+"36000","New York",1490678.5
+"37000","North Carolina",511539.9
+"38000","North Dakota",53930.2
+"39000","Ohio",615474.4
+"40000","Oklahoma",197900.4
+"41000","Oregon",225336.8
+"42000","Pennsylvania",726165.9
+"44000","Rhode Island",53668.0
+"45000","South Carolina",214933.7
+"46000","South Dakota",47559.7
+"47000","Tennessee",328406.3
+"48000","Texas",1764357.2
+"49000","Utah",168792.7
+"50000","Vermont",29806.2
+"51000","Virginia",489168.4
+"53000","Washington",548686.7
+"54000","West Virginia",72340.4
+"55000","Wisconsin",308044.7
+"56000","Wyoming",39214.0
+"91000","New England",990777.5
+"92000","Mideast",3336480.6
+"93000","Great Lakes",2505871.8
+"94000","Plains",1181310.4
+"95000","Southeast",3981051.8
+"96000","Southwest",2386060.9
+"97000","Rocky Mountain",687941.6
+"98000","Far West",3864650.3
+"Legend / Footnotes:"
+"Real GDP is in millions of chained 2012 dollars. Calculations are performed on unrounded data. Chained (2012) dollar series are calculated as the product of the chain-type quantity index and the 2012 current-dollar value of the corresponding series, divided by 100. Because the formula for the chain-type quantity indexes uses weights of more than one period, the corresponding chained-dollar estimates are usually not additive. The difference between the United States and sum-of-states reflects federal military and civilian activity located overseas, as well as the differences in source data used to estimate GDP by industry and the expenditures measure of real GDP."
+"Last updated: October 2, 2020-- revised statistics for 1997-2019."
