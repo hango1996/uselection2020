@@ -68,7 +68,7 @@ library(plyr)
 
 ### Economic Influence during Pandemic 
 ## Personal Income 2020Q2
-pi20=read.csv("piQ2-20.csv",skip=4)[1:180,]
+pi20=read.csv("pi20Q2_sum.csv",skip=4)[1:180,]
 
 pi20_df=data.frame(State = factor(pi20$GeoName %>% unique() %>% str_remove_all("[*]") %>% sub(' $', '',.)), 
                    PI20Q2_Tot = (pi20 %>% ddply(.(GeoName), summarise, X2020.Q2[LineCode == 1]) %>% .$..1),
