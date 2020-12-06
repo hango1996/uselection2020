@@ -17,7 +17,8 @@ Turnout.mat = apply(Turnout.df, 2, function(v){
   as.numeric(str)
 })
 rownames(Turnout.mat) = Turnout2020$StateAbv[-1]
-gg1 = ggpairs(data.frame(Turnout.mat))
+Turnout.mat = as.data.frame(Turnout.mat)
+gg1 = ggpairs((Turnout.mat))
 ggsave(plot = gg1, file = "../figure/pair_raw.pdf")
 
 # npn transformation to better normalization
@@ -77,5 +78,34 @@ for(i in plot_list){
          main = TeX(sprintf("$\\lambda = %f$", Turnout.model$lambda[i])) )
   print(i)
 }
+
+
+
+#further visualization on VEPTurnoutRate & ratio 
+
+
+plot_df = Turnout.mat %>% 
+  select(VEPTurnoutRate, Ratio, TotalDPI, CapitaDPI) %>% 
+  mutate(State = Turnout2020$State[-1]) %>% 
+  mutate(TrumpBiden = ifelse(Ratio >1, 'Trump', 'Biden'), 
+         DPIClass = case_when(
+           TotalDPI < quantile(TotalDPI, 0.25) ~ 'lowerDPI', 
+           TotalDPI < quantile(TotalDPI, 0.75) ~ 'midDPI', 
+           TRUE ~ 'upperDPI'
+         ), 
+         CapitalDPIClass = case_when(
+           CapitaDPI < quantile(CapitaDPI, 0.25) ~ 'lowerCapitalDPI', 
+           CapitaDPI < quantile(CapitaDPI, 0.75) ~ 'midCapitalDPI', 
+           TRUE ~ 'upperCapitalDPI'
+         )) 
+ggplot(plot_df) + 
+  geom_density(aes(x = VEPTurnoutRate)) + 
+  facet_wrap(~TrumpBiden)
+ggplot(plot_df) + 
+  geom_density(aes(x = VEPTurnoutRate)) + 
+  facet_wrap(~DPIClass)
+ggplot(plot_df) + 
+  geom_density(aes(x = VEPTurnoutRate)) + 
+  facet_wrap(~CapitalDPIClass)
 
 

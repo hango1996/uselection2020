@@ -61,7 +61,7 @@ Turnout_df = Turnout_df %>% mutate(State = State %>% str_remove_all("[*]"))
 
 dpi2019 = read.csv("../data/dpi2019_sum.csv", skip = 4)[1:180,]
 
-dpi_df = data.frame(State = dpi2019$GeoName %>% unique() %>% str_remove_all("[*]") %>% sub(' $', '',.), 
+dpi_df = data.frame(State = dpi2019 %>% ddply(.(GeoName), summarise, X2019[LineCode == 51]) %>% .$GeoName %>% str_remove_all("[*]") %>% sub(' $', '',.), 
                     TotalDPI = dpi2019 %>% ddply(.(GeoName), summarise, X2019[LineCode == 51]) %>% .$..1,
                     CapitaDPI = dpi2019 %>% ddply(.(GeoName), summarise, X2019[LineCode == 53]) %>% .$..1)
 
