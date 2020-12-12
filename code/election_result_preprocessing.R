@@ -1,7 +1,7 @@
 ## Resetting For Economical Data
 rm(list = ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-# load("../data/Turnout_df.Rda")
+load("../data/Turnout_df.Rda")
 # Turnout_df=Turnout_df[,-c(21,22,26)]
 # save(Turnout_df, file = '../data/Turnout_df.Rda')
 # load("../data/Turnout_df.Rda")
@@ -105,9 +105,12 @@ library(plyr)
 # save(Turnout_df, file = '../data/Turnout_df.Rda')
 # rm(list = ls())
 #### Adding Electorial votes
-load("../data/Turnout_df.Rda")
-electorial.raw=read.csv("../data/Electoral_College.csv")
-electorial=electorial.raw[which(electorial.raw$Year==2020),-1]
-Turnout_df=Turnout_df%>%left_join(electorial)
-Turnout_df[10,]$Votes=electorial[which(electorial$State=="D.C."),]$Votes
-save(Turnout_df,file = "../data/Turnout_df.Rda")
+# load("../data/Turnout_df.Rda")
+# electorial.raw=read.csv("../data/Electoral_College.csv")
+# electorial=electorial.raw[which(electorial.raw$Year==2020),-1]
+# Turnout_df=Turnout_df%>%left_join(electorial)
+# Turnout_df[10,]$Votes=electorial[which(electorial$State=="D.C."),]$Votes
+# save(Turnout_df,file = "../data/Turnout_df.Rda")
+#load("../data/Turnout_df.Rda")
+
+### Add Swing States: the difference is less than 5%
