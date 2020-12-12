@@ -113,4 +113,14 @@ library(plyr)
 # save(Turnout_df,file = "../data/Turnout_df.Rda")
 #load("../data/Turnout_df.Rda")
 
-### Add Swing States: the difference is less than 5%
+### Add Swing States: the difference is less than 5%; we find the ratio between .89 & 1.12
+# blue=which(Turnout_df$Ratio>1.12)
+# lb=which(Turnout_df$Ratio>1 & Turnout_df$Ratio<1.12)
+# lr=which(Turnout_df$Ratio<1 & Turnout_df$Ratio>0.89)
+# red=which(Turnout_df$Ratio<.89)
+# swing=sort(union(lb,lr))
+# power=rep(NA,dim(Turnout_df)[1])
+# power[blue]="Blue";power[red]="Red";power[lb]="Swing-Blue";power[lr]="Swing-Red"
+# Turnout_df$Power=power
+# save(Turnout_df,file="../data/Turnout_df.Rda")
+load("../data/Turnout_df.Rda")
