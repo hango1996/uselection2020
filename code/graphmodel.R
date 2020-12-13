@@ -24,7 +24,8 @@ Turnout.df = as.data.frame(Turnout.df)
 Turnout.df = Turnout.df %>% mutate(case_Cap = case_count / pop19_bea, death_Cap = death_count / pop19_bea, test_Cap = test_count / pop19_bea)
 
 ## choose some relevant variables
-Turnout_select.df = Turnout.df %>% select(VEPTurnoutRate, TotalVEP, NonCitizenPropVEP, PI20Q2_Cap, DPI19_Cap, GDP20Q2_Cap, GDP19_Cap, Ratio, case_Cap, death_Cap, test_Cap)
+#Turnout_select.df = Turnout.df %>% select(VEPTurnoutRate, TotalVEP, NonCitizenPropVEP, PI20Q2_Cap, DPI19_Cap, GDP20Q2_Cap, GDP19_Cap, Ratio, case_Cap, death_Cap, test_Cap)
+Turnout_select.df = Turnout.df %>% select(VEPTurnoutRate, NonCitizenPropVEP, PI20Q2_Cap, DPI19_Cap, GDP20Q2_Cap, GDP19_Cap, Ratio, case_Cap, death_Cap, test_Cap)
 
 
 gg1 = ggpairs((Turnout_select.df))
